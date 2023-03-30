@@ -9,19 +9,25 @@ export default function contractForm() {
     // const [endDate, setEndDate] = useState(null);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const [skills, setSkills] = useState([]);
+    const [skills, setSkills] = useState(null);
     let handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("FORM SUBMTITED");
+        console.log("FORM SUBMTITED WITH DATA: ", {
+            Title: jobTitleInput,
+            Phone: contactPhoneInput,
+            Email: contactEmailInput,
+            skills: skills,
+        });
     };
     return (
         <>
             <div>
-                <div className="border-solid border-4 border-white bg-rose-500">
+                <div className="absolute inset-y-2/4 left-40">
                     <form
                         onSubmit={(e) => {
                             handleSubmit(e);
                         }}
+                        className="border-solid border-4 border-white bg-rose-500 flex flex-col content-between items-center justify-evenly px-1.5"
                     >
                         <input
                             type="text"
@@ -60,7 +66,11 @@ export default function contractForm() {
                             }}
                             isClearable={true}
                         />
-                        <CheckboxDropdown />
+                        <CheckboxDropdown
+                            skills={skills}
+                            setSkills={setSkills}
+                        />
+                        <button>Submit</button>
                     </form>
                 </div>
             </div>
