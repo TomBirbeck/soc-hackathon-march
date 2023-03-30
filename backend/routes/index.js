@@ -2,6 +2,14 @@ import express from "express";
 const router = express.Router();
 import getAllCandidates from "../models/getAllCandidates.js";
 
+router.get('/', async (req, res) => {
+    try {
+       res.send('Hello World')
+    } catch (error) {
+        res.json({ success : false, data : error})
+    }
+})
+
 router.get('/candidates', async (req, res) => {
     try {
        const response = await getAllCandidates()   
