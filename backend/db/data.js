@@ -1,36 +1,68 @@
 const candidates = [
     {
-        name: "Tom",
-        skills: ["javascript", "typescript"]
+        name: "Alia",
+        skills: ["javascript", "typescript", "react", "java", "python"]
     },
     {
-        name: "Anastasia",
+        name: "Casey",
         skills: ["javascript", "typescript", "graphql"]
     },
     {
-        name: "Robert",
+        name: "Alan",
         skills: ["javascript", "typescript", "react"]
     },
     {
-        name: "Susan",
-        skills: ["aws", "python"]
+        name: "Sally",
+        skills: ["aws", "python", "react"]
     },
     {
-        name: "Barry",
-        skills: ["java", "javascript"]
+        name: "Paula",
+        skills: ["java", "javascript", "go"]
     },
     {
-        name: "Betty",
-        skills: ["ruby", "typescript", "sql"]
+        name: "John",
+        skills: ["ruby", "typescript", "java"]
     },
     {
-        name: "Steve",
-        skills: ["javascript", "typescript", "aws", "aws"]
+        name: "Simon",
+        skills: ["javascript", "typescript", "aws", "java"]
     },
     {
-        name: "Stacey",
+        name: "Louise",
         skills: ["javascript", "typescript", "aws", "python"]
     },
+    // {
+    //     name: "Tom",
+    //     skills: ["javascript", "typescript"]
+    // },
+    // {
+    //     name: "Anastasia",
+    //     skills: ["javascript", "typescript", "graphql"]
+    // },
+    // {
+    //     name: "Robert",
+    //     skills: ["javascript", "typescript", "react"]
+    // },
+    // {
+    //     name: "Susan",
+    //     skills: ["aws", "python"]
+    // },
+    // {
+    //     name: "Barry",
+    //     skills: ["java", "javascript"]
+    // },
+    // {
+    //     name: "Betty",
+    //     skills: ["ruby", "typescript", "sql"]
+    // },
+    // {
+    //     name: "Steve",
+    //     skills: ["javascript", "typescript", "aws", "aws"]
+    // },
+    // {
+    //     name: "Stacey",
+    //     skills: ["javascript", "typescript", "aws", "python"]
+    // },
 ]
 
 export default candidates
