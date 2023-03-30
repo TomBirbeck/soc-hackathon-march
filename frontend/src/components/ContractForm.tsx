@@ -9,7 +9,7 @@ export default function contractForm() {
     // const [endDate, setEndDate] = useState(null);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const [skills, setSkills] = useState(null);
+    const [skills, setSkills] = useState([]);
     let handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("FORM SUBMTITED WITH DATA: ", {
@@ -18,6 +18,17 @@ export default function contractForm() {
             Email: contactEmailInput,
             skills: skills,
         });
+
+        let requiredSkillsRegex = new RegExp(
+            skills
+                .map((e: any) => {
+                    // TODO: Fix type
+                    return e.value;
+                })
+                .join("|"),
+            "gi"
+        );
+        console.log("REQUIRED SKILLS REGEXP: ", requiredSkillsRegex);
     };
     return (
         <>
