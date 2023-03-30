@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "nodemon -r dotenv/config app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node -r dotenv/config ./db/create.js",
     "pop": "node -r dotenv/config ./db/pop.js"
@@ -16,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "nodemon": "^2.0.22",
     "pg": "^8.10.0"
   }
 }
