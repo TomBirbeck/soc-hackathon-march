@@ -6,6 +6,10 @@ import ContractForm from "./components/ContractForm";
 function App() {
     const [count, setCount] = useState(0);
 
+    // Candidate list here
+
+    // Candidate vs search logic here
+
     return (
         <div className="App">
             <ContractForm></ContractForm>
