@@ -1,7 +1,19 @@
 import { useState, useEffect, FormEvent } from "react";
 import DatePicker from "react-datepicker";
 import CheckboxDropdown from "./CheckboxDropdown";
-export default function contractForm() {
+import Test from "./test";
+// const ContractForm = async () => {
+function ContractForm(/*  candidates:any */) {
+    const [candidates, setCandidates] = useState([]);
+    useEffect(() => {
+        (async function getCandidates() {
+            const res = await fetch(
+                "https://candidate-search.onrender.com/candidates"
+            );
+            const candidateData = await res.json();
+            setCandidates(candidateData);
+        })();
+    }, []);
     const [jobTitleInput, setJobTitleInput] = useState("");
     const [contactPhoneInput, setContactPhoneInput] = useState("");
     const [contactEmailInput, setContactEmailInput] = useState("");
@@ -30,15 +42,16 @@ export default function contractForm() {
         );
         console.log("REQUIRED SKILLS REGEXP: ", requiredSkillsRegex);
     };
+    console.log(candidates);
     return (
         <>
-            <div>
-                <div className="absolute inset-y-2/4 left-40">
+            <div className="flex items-center justify-center flex-col">
+                <div className="margin-auto inset-y-2/4 left-40">
                     <form
                         onSubmit={(e) => {
                             handleSubmit(e);
                         }}
-                        className="border-solid border-4 border-white bg-rose-500 flex flex-col content-between items-center justify-evenly px-1.5"
+                        className="border-solid border-4 border-white bg-rose-500 flex flex-col content-between items-center justify-evenly p-5"
                     >
                         <input
                             type="text"
@@ -81,10 +94,22 @@ export default function contractForm() {
                             skills={skills}
                             setSkills={setSkills}
                         />
-                        <button>Submit</button>
+                        <button className="p-5 bg-blue-500 m-2">Submit</button>
                     </form>
                 </div>
             </div>
+            <ul>
+                <>
+                    {candidates.map(() => {
+                        return (
+                            <>
+                                <Test />
+                            </>
+                        );
+                    })}
+                </>
+            </ul>
         </>
     );
 }
+export default ContractForm;
