@@ -1,35 +1,35 @@
 const candidates = [
     {
         name: "Tom",
-        skills: {javascript: true, typescript: true}
+        skills: ["javascript", "typescript"]
     },
     {
         name: "Anastasia",
-        skills: {javascript: true, typescript: true, graphql: true}
+        skills: ["javascript", "typescript", "graphql"]
     },
     {
         name: "Robert",
-        skills: {javascript: true, typescript: true, react: true}
+        skills: ["javascript", "typescript", "react"]
     },
     {
         name: "Susan",
-        skills: {aws: true, python: true}
+        skills: ["aws", "python"]
     },
     {
         name: "Barry",
-        skills: {java: true, javascript: true}
+        skills: ["java", "javascript"]
     },
     {
         name: "Betty",
-        skills: {ruby: true, typescript: true, sql}
+        skills: ["ruby", "typescript", "sql"]
     },
     {
         name: "Steve",
-        skills: {javascript: true, typescript: true, aws: true, aws: true}
+        skills: ["javascript", "typescript", "aws", "aws"]
     },
     {
         name: "Stacey",
-        skills: {javascript: true, typescript: true, aws: true, python: true}
+        skills: ["javascript", "typescript", "aws", "python"]
     },
 ]
 
