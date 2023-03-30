@@ -8,6 +8,7 @@ function App() {
 
     // Candidate list here
 
+
     // Candidate vs search logic here
 
     return (
