@@ -1,47 +1,32 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import ContractForm from "./components/ContractForm";
+import MatchedCandidates from "./components/MatchedCandidates";
+import { CandidateList, ContractList, PartialMatchedCandidateList } from "./types";
 function App() {
-    /* const [candidates, setCandidates] = useState([]);
+    const [candidates, setCandidates] = useState();
+
     useEffect(() => {
         (async function getCandidates() {
             const res = await fetch(
-                "https://candidate-search.onrender.com/candidates"
+                "http://localhost:3001/candidates"
+                // "https://candidate-search.onrender.com/candidates"
             );
             const candidateData = await res.json();
-            setCandidates(candidateData);
+            setCandidates(candidateData.data);
         })();
-    }, []); */
+    }, []);
 
-    // Candidate list here
-    type CandidateList = {
-        name: string,
-        skills: string[]
-    }
 
-    const candidateArray: CandidateList[] = [{ name: "candidate1", skills: ["AWS", "javascript"] },
-    { name: "candidate3", skills: ["AWS"] },
-    { name: "candidate2", skills: ["typescript", "javascript"] }
-    ]
-
-    // Candidate vs search logic here
-    type ContractList = {
-        name: string,
-        skills: string[]
-    }
+    // const candidateArray: CandidateList[] = [{ name: "candidate1", skills: ["AWS", "javascript"] },
+    // { name: "candidate3", skills: ["AWS"] },
+    // { name: "candidate2", skills: ["typescript", "javascript"] }
+    // ]
 
     const contract = { name: "Contract Name", skills: ["typescript"] }
 
-    type PartialMatchedCandidateList = {
-        name: string,
-        skills: string[],
-        match: string[]
-    }
 
-
-    matchingCandidates(candidateArray, contract)
+    // matchingCandidates(candidateArray, contract)
 
     function matchingCandidates(candidate: CandidateList[], contract: ContractList): PartialMatchedCandidateList[] {
 
@@ -82,25 +67,19 @@ function App() {
 
         matchingCandidates.sort(function (a, b) { return b.match.length - a.match.length })
 
-        console.log(matchingCandidates)
+        // console.log(matchingCandidates)
         return matchingCandidates
 
     }
 
-
+// console.log({candidates})
 
 
     return (
-        <>
             <div className="App">
                 <ContractForm /* candidates={candidates} *//>
-                          {/* <ul>
-                {candidates.map((c) => {
-                    return <li></li>;
-                })}
-            </ul> */}
+                {/* <MatchedCandidates props={candidates}/> */}
             </div>
-        </>
     );
 }
 

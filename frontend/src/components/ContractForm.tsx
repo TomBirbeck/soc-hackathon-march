@@ -1,17 +1,18 @@
 import { useState, useEffect, FormEvent } from "react";
 import DatePicker from "react-datepicker";
 import CheckboxDropdown from "./CheckboxDropdown";
-import Test from "./test";
+// import Test from "./test";
 // const ContractForm = async () => {
 function ContractForm(/*  candidates:any */) {
     const [candidates, setCandidates] = useState([]);
     useEffect(() => {
         (async function getCandidates() {
             const res = await fetch(
-                "https://candidate-search.onrender.com/candidates"
+                "http://localhost:3001/candidates"
+                // "https://candidate-search.onrender.com/candidates"
             );
             const candidateData = await res.json();
-            setCandidates(candidateData);
+            setCandidates(candidateData.data);
         })();
     }, []);
     const [jobTitleInput, setJobTitleInput] = useState("");
@@ -98,7 +99,7 @@ function ContractForm(/*  candidates:any */) {
                     </form>
                 </div>
             </div>
-            <ul>
+            {/* <ul>
                 <>
                     {candidates.map(() => {
                         return (
@@ -108,7 +109,7 @@ function ContractForm(/*  candidates:any */) {
                         );
                     })}
                 </>
-            </ul>
+            </ul> */}
         </>
     );
 }
