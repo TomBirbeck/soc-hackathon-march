@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import ContractForm from "./components/ContractForm";
 import MatchedCandidates from "./components/MatchedCandidates";
+import PartialMatches from "./components/PartialMatchCandidates";
 import { CandidateList, ContractList, PartialMatchedCandidateList } from "./types";
 function App() {
-    const [candidates, setCandidates] = useState();
+    const [candidates, setCandidates] = useState([]);
+    const [fullMatches, setFullMatches]  = useState<CandidateList[]>([]);
+    const [partialMatches, setPartialMatches] = useState<CandidateList[]>([]);
+    const [regex, setRegex] = useState<RegExp>(/ /)
 
     useEffect(() => {
         (async function getCandidates() {
@@ -77,8 +81,9 @@ function App() {
 
     return (
             <div className="App">
-                <ContractForm /* candidates={candidates} *//>
-                {/* <MatchedCandidates props={candidates}/> */}
+                <ContractForm /* candidates={candidates} */ setRegex = {setRegex}/>
+                <MatchedCandidates props={fullMatches}/>
+                <PartialMatches props={partialMatches}/>
             </div>
     );
 }

@@ -6,7 +6,7 @@ console.log({props})
     return (
         <ul>
            <li>
-            hey
+            matched candidates
            </li>
         </ul>
     )

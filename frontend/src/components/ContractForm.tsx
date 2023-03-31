@@ -1,20 +1,20 @@
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, FormEvent, SetStateAction } from "react";
 import DatePicker from "react-datepicker";
 import CheckboxDropdown from "./CheckboxDropdown";
 // import Test from "./test";
 // const ContractForm = async () => {
-function ContractForm(/*  candidates:any */) {
-    const [candidates, setCandidates] = useState([]);
-    useEffect(() => {
-        (async function getCandidates() {
-            const res = await fetch(
-                "http://localhost:3001/candidates"
-                // "https://candidate-search.onrender.com/candidates"
-            );
-            const candidateData = await res.json();
-            setCandidates(candidateData.data);
-        })();
-    }, []);
+function ContractForm(/*  candidates:any */setRegex : React.Dispatch<React.SetStateAction<RegExp>>) {
+    // const [candidates, setCandidates] = useState([]);
+    // useEffect(() => {
+    //     (async function getCandidates() {
+    //         const res = await fetch(
+    //             "http://localhost:3001/candidates"
+    //             // "https://candidate-search.onrender.com/candidates"
+    //         );
+    //         const candidateData = await res.json();
+    //         setCandidates(candidateData.data);
+    //     })();
+    // }, []);
     const [jobTitleInput, setJobTitleInput] = useState("");
     const [contactPhoneInput, setContactPhoneInput] = useState("");
     const [contactEmailInput, setContactEmailInput] = useState("");
@@ -42,12 +42,11 @@ function ContractForm(/*  candidates:any */) {
             "gi"
         );
         console.log("REQUIRED SKILLS REGEXP: ", requiredSkillsRegex);
+        setRegex(requiredSkillsRegex)
     };
-    console.log(candidates);
+    // console.log(candidates);
     return (
-        <>
             <div className="flex items-center justify-center flex-col">
-                <div className="margin-auto inset-y-2/4 left-40">
                     <form
                         onSubmit={(e) => {
                             handleSubmit(e);
@@ -98,19 +97,6 @@ function ContractForm(/*  candidates:any */) {
                         <button className="p-5 bg-blue-500 m-2">Submit</button>
                     </form>
                 </div>
-            </div>
-            {/* <ul>
-                <>
-                    {candidates.map(() => {
-                        return (
-                            <>
-                                <Test />
-                            </>
-                        );
-                    })}
-                </>
-            </ul> */}
-        </>
     );
 }
 export default ContractForm;

@@ -15,8 +15,6 @@ export type PartialMatchedCandidateList = {
     match: string[]
 }
 
-export type MatchedIprops = {
-    props : [
-        CandidateList[]
-    ]
+export interface MatchedIprops {
+        props : CandidateList[]
 }
