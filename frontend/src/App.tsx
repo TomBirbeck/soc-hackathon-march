@@ -5,6 +5,8 @@ import MatchedCandidates from "./components/MatchedCandidates";
 import PartialMatches from "./components/PartialMatchCandidates";
 import { CandidateList, ContractList, PartialMatchedCandidateList, options } from "./types";
 import regexCreator from "./utilities/regexCreator";
+import partialMatchingCandidates from "./utilities/partialMatches";
+import fullMatchingCandidates from "./utilities/fullMatches";
 
 function App() {
     const [candidates, setCandidates] = useState([]);
@@ -26,9 +28,13 @@ function App() {
     
     useEffect(() => {
         setRegex(regexCreator(requiredSkills))
+        setPartialMatches(partialMatchingCandidates(candidates, regex))
+        setFullMatches(fullMatchingCandidates(candidates, requiredSkills))
     }, [requiredSkills])
     
     console.log({regex})
+    console.log({partialMatches})
+    console.log({fullMatches})
 
     return (
             <div className="App">

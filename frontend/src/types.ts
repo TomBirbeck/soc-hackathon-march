@@ -10,6 +10,7 @@ export type ContractList = {
 }
 
 export type PartialMatchedCandidateList = {
+    id: number,
     name: string,
     skills: string[],
     match: string[]
