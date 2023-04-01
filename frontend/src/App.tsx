@@ -3,7 +3,7 @@ import "./App.css";
 import ContractForm from "./components/ContractForm";
 import MatchedCandidates from "./components/MatchedCandidates";
 import PartialMatches from "./components/PartialMatchCandidates";
-import { CandidateList, ContractList, PartialMatchedCandidateList, options } from "./types";
+import { CandidateList, options } from "./types";
 import regexCreator from "./utilities/regexCreator";
 import partialMatchingCandidates from "./utilities/partialMatches";
 import fullMatchingCandidates from "./utilities/fullMatches";
@@ -31,14 +31,10 @@ function App() {
         setPartialMatches(partialMatchingCandidates(candidates, regex))
         setFullMatches(fullMatchingCandidates(candidates, requiredSkills))
     }, [requiredSkills])
-    
-    console.log({regex})
-    console.log({partialMatches})
-    console.log({fullMatches})
 
     return (
             <div className="App">
-                <ContractForm /* candidates={candidates} */ setRequiredSkills = {setRequiredSkills}/>
+                <ContractForm setRequiredSkills = {setRequiredSkills}/>
                 <MatchedCandidates props={fullMatches}/>
                 <PartialMatches props={partialMatches}/>
             </div>
