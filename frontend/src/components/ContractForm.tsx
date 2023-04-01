@@ -1,20 +1,12 @@
 import { useState, useEffect, FormEvent, SetStateAction } from "react";
 import DatePicker from "react-datepicker";
 import CheckboxDropdown from "./CheckboxDropdown";
-// import Test from "./test";
-// const ContractForm = async () => {
-function ContractForm(/*  candidates:any */setRegex : React.Dispatch<React.SetStateAction<RegExp>>) {
-    // const [candidates, setCandidates] = useState([]);
-    // useEffect(() => {
-    //     (async function getCandidates() {
-    //         const res = await fetch(
-    //             "http://localhost:3001/candidates"
-    //             // "https://candidate-search.onrender.com/candidates"
-    //         );
-    //         const candidateData = await res.json();
-    //         setCandidates(candidateData.data);
-    //     })();
-    // }, []);
+import { options } from "../types";
+
+interface Iprops {
+    setRequiredSkills : React.Dispatch<React.SetStateAction<options[]>>;
+}
+function ContractForm( {setRequiredSkills} : Iprops) {
     const [jobTitleInput, setJobTitleInput] = useState("");
     const [contactPhoneInput, setContactPhoneInput] = useState("");
     const [contactEmailInput, setContactEmailInput] = useState("");
@@ -22,8 +14,9 @@ function ContractForm(/*  candidates:any */setRegex : React.Dispatch<React.SetSt
     // const [endDate, setEndDate] = useState(null);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const [skills, setSkills] = useState([]);
-    let handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const [skills, setSkills] = useState<options[]>([]);
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("FORM SUBMTITED WITH DATA: ", {
             Title: jobTitleInput,
@@ -31,20 +24,9 @@ function ContractForm(/*  candidates:any */setRegex : React.Dispatch<React.SetSt
             Email: contactEmailInput,
             skills: skills,
         });
-
-        let requiredSkillsRegex = new RegExp(
-            skills
-                .map((e: any) => {
-                    // TODO: Fix type
-                    return e.value;
-                })
-                .join("|"),
-            "gi"
-        );
-        console.log("REQUIRED SKILLS REGEXP: ", requiredSkillsRegex);
-        setRegex(requiredSkillsRegex)
+        setRequiredSkills(skills)
     };
-    // console.log(candidates);
+
     return (
             <div className="flex items-center justify-center flex-col">
                     <form
@@ -94,7 +76,7 @@ function ContractForm(/*  candidates:any */setRegex : React.Dispatch<React.SetSt
                             skills={skills}
                             setSkills={setSkills}
                         />
-                        <button className="p-5 bg-blue-500 m-2">Submit</button>
+                        <button className="p-5 bg-blue-500 m-2">Search</button>
                     </form>
                 </div>
     );

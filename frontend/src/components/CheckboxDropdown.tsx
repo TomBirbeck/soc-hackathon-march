@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Option from "./Option";
 import { default as ReactSelect } from "react-select";
-export default function CheckboxDropdown(selected: any) {
+
+const  CheckboxDropdown = (selected: any) => {
     // TODO: Fix types
     const {skills, setSkills} = selected;
-    // const [selectedOptions, setSelectedOptions] = useState(null);
+
     const options = [
         { value: "java", label: "Java" },
         { value: "javascript", label: "JavaScript" },
@@ -16,7 +17,7 @@ export default function CheckboxDropdown(selected: any) {
         { value: "cpp", label: "C++" },
         { value: "cs", label: "C#" },
         { value: "sql", label: "SQL" },
-        //        {value:"",label:"",},
+        
     ];
 
     return (
@@ -31,7 +32,6 @@ export default function CheckboxDropdown(selected: any) {
                 }}
                 onChange={(options: any) => {
                     // TODO: Fix type
-                    console.log("OPTIONS: ", skills);
                     setSkills(options);
                 }}
                 // allowSelectAll={true}
@@ -40,3 +40,5 @@ export default function CheckboxDropdown(selected: any) {
         </div>
     );
 }
+
+export default CheckboxDropdown

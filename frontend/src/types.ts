@@ -18,3 +18,8 @@ export type PartialMatchedCandidateList = {
 export interface MatchedIprops {
         props : CandidateList[]
 }
+
+export type options = {
+    value: string,
+    label: string,
+}
