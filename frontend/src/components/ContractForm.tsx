@@ -33,7 +33,7 @@ function ContractForm( {setRequiredSkills} : Iprops) {
                         onSubmit={(e) => {
                             handleSubmit(e);
                         }}
-                        className="border-solid border-4 border-white bg-rose-500 flex flex-col content-between items-center justify-evenly p-5"
+                        className="grid md:grid-cols-6 border-solid border-4 border-rose-300 p-5"
                     >
                         <input
                             type="text"

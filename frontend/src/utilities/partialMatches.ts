@@ -7,10 +7,11 @@ const partialMatchingCandidates = (candidate: CandidateList[], regex: RegExp): P
     for (let i = 0; i < candidate.length; i++) {
         //use array.join to get a string of candidate skills
         //use string.match()
-        const candidateSkills = [...candidate[i].skills]
-        const joinedSkills = candidateSkills.join(' ')
+        // const candidateSkills = [...candidate[i].skills]
+        // const joinedSkills = candidateSkills.join(' ')
 
-        const match = joinedSkills.match(regex)
+        const match = candidate[i].skills.match(regex)
+        // const match = joinedSkills.match(regex)
 
         if (match) {
             //add matched skills onto candidate object. 
