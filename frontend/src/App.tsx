@@ -28,7 +28,7 @@ function App() {
     
     useEffect(() => {
         setRegex(regexCreator(requiredSkills))
-        setPartialMatches(partialMatchingCandidates(candidates, regex))
+        setPartialMatches(partialMatchingCandidates(candidates, regex, requiredSkills.length))
         setFullMatches(fullMatchingCandidates(candidates, requiredSkills))
     }, [requiredSkills])
 

@@ -24,3 +24,11 @@ export type options = {
     value: string,
     label: string,
 }
+
+export interface CandidateListItemIprops {
+    props: {
+        id: number,
+        name: string,
+        skills: string
+    }
+}

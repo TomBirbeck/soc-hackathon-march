@@ -1,6 +1,6 @@
-import { CandidateList, ContractList, PartialMatchedCandidateList } from "../types";
+import { CandidateList, PartialMatchedCandidateList } from "../types";
 
-const partialMatchingCandidates = (candidate: CandidateList[], regex: RegExp): PartialMatchedCandidateList[] => {
+const partialMatchingCandidates = (candidate: CandidateList[], regex: RegExp, skillsAmount: number): PartialMatchedCandidateList[] => {
     //create an empty array to store the matching candidates
     const matchingCandidates: PartialMatchedCandidateList[] = []
 
@@ -15,8 +15,12 @@ const partialMatchingCandidates = (candidate: CandidateList[], regex: RegExp): P
 
         if (match) {
             //add matched skills onto candidate object. 
-            const matchedCandidate = { ...candidate[i], match }
-            matchingCandidates.push(matchedCandidate)
+            const matchedCandidate = { ...candidate[i], match}
+            // const length = match.length
+            // console.log("partials", length, skillsAmount)
+            // if (length < skillsAmount){
+                matchingCandidates.push(matchedCandidate)
+            // }
         }
     }
 
@@ -24,7 +28,8 @@ const partialMatchingCandidates = (candidate: CandidateList[], regex: RegExp): P
     // sort candidates for highest to lowest
     matchingCandidates.sort(function (a, b) { return b.match.length - a.match.length })
 
-    return matchingCandidates
+    console.log("partial", matchingCandidates, matchingCandidates.filter((candidate) => candidate.match.length < skillsAmount))
+    return matchingCandidates.filter((candidate) => candidate.match.length < skillsAmount)
 }
 
 export default partialMatchingCandidates

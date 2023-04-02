@@ -7,7 +7,8 @@ const fullMatchingCandidates = (candidate: CandidateList[], skillsRequired: opti
 
     for (let i = 0; i < candidate.length; i++) {
 
-        const skills = candidate[i].skills
+        const skills = candidate[i].skills.split(', ')
+        console.log({skills})
         if(skillsRequired.every(r => skills.includes(r.value))){
             matchingCandidates.push(candidate[i]);
         }
