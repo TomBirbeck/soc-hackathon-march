@@ -1,36 +1,68 @@
 const candidates = [
     {
         name: "Alia",
-        skills: ["javascript", "typescript", "react", "java", "python"]
+        skills: "javascript, typescript, react, java, python"
     },
     {
         name: "Casey",
-        skills: ["javascript", "typescript", "graphql"]
+        skills: "javascript, typescript, graphql"
     },
     {
         name: "Alan",
-        skills: ["javascript", "typescript", "react"]
+        skills: "javascript, typescript, react"
     },
     {
         name: "Sally",
-        skills: ["aws", "python", "react"]
+        skills: "aws, python, react"
     },
     {
         name: "Paula",
-        skills: ["java", "javascript", "go"]
+        skills: "java, javascript, go"
     },
     {
         name: "John",
-        skills: ["ruby", "typescript", "java"]
+        skills: "ruby, typescript, java"
     },
     {
         name: "Simon",
-        skills: ["javascript", "typescript", "aws", "java"]
+        skills: "javascript, typescript, aws, java"
     },
     {
         name: "Louise",
-        skills: ["javascript", "typescript", "aws", "python"]
+        skills: "javascript, typescript, aws, python"
     },
+    // {
+    //     name: "Alia",
+    //     skills: ["javascript", "typescript", "react", "java", "python"]
+    // },
+    // {
+    //     name: "Casey",
+    //     skills: ["javascript", "typescript", "graphql"]
+    // },
+    // {
+    //     name: "Alan",
+    //     skills: ["javascript", "typescript", "react"]
+    // },
+    // {
+    //     name: "Sally",
+    //     skills: ["aws", "python", "react"]
+    // },
+    // {
+    //     name: "Paula",
+    //     skills: ["java", "javascript", "go"]
+    // },
+    // {
+    //     name: "John",
+    //     skills: ["ruby", "typescript", "java"]
+    // },
+    // {
+    //     name: "Simon",
+    //     skills: ["javascript", "typescript", "aws", "java"]
+    // },
+    // {
+    //     name: "Louise",
+    //     skills: ["javascript", "typescript", "aws", "python"]
+    // },
     // {
     //     name: "Tom",
     //     skills: ["javascript", "typescript"]

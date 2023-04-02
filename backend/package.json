@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node -r dotenv/config ./db/create.js",
     "pop": "node -r dotenv/config ./db/pop.js",
-    "build": ""
+    "delete": "node -r dotenv/config ./db/deleteTable.js"
   },
   "keywords": [],
   "author": "",
