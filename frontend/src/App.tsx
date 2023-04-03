@@ -18,8 +18,7 @@ function App() {
     useEffect(() => {
         (async function getCandidates() {
             const res = await fetch(
-                "http://localhost:3001/candidates"
-                // "https://candidate-search.onrender.com/candidates"
+                'https://contractshackathon.onrender.com/candidates'
             );
             const candidateData = await res.json();
             setCandidates(candidateData.data);
