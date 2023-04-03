@@ -2,7 +2,7 @@ import { options } from "../types"
 
 
 const regexCreator = (wordList : options[]) => {
-return new RegExp(wordList.map((item) => {return item.value}).join("|"),"gi")
+return new RegExp(wordList.map((item) => {return "\\b"+(item.value)+"\\b"}).join("|"),"gi")
 }
 
 export default regexCreator

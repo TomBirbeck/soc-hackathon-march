@@ -8,7 +8,7 @@ const PartialMatches = ({props}: MatchedIprops) => {
             <h2 className="font-bold my-2">These candidates partially match your criteria</h2>
             <ul>
                 {props.map((candidate) => {return(
-                <li key={candidate.id} className="text-left mb-2">
+                <li className="text-left mb-2" key={candidate.id}>
                 <CandidateListItem props={candidate}/>
                 </li>
                     )})

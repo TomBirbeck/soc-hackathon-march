@@ -14,15 +14,17 @@ function App() {
     const [partialMatches, setPartialMatches] = useState<CandidateList[]>([]);
     const [requiredSkills, setRequiredSkills] = useState<options[]>([])
     const [regex, setRegex] = useState<RegExp>(/ /gi)
+    const url = (import.meta.env.VITE_DB_URL)
 
     useEffect(() => {
-        (async function getCandidates() {
+        const getCandidates = async () => {
             const res = await fetch(
-                'https://contractshackathon.onrender.com/candidates'
+                url
             );
             const candidateData = await res.json();
             setCandidates(candidateData.data);
-        })();
+        };
+        getCandidates();
     }, []);
     
     useEffect(() => {
