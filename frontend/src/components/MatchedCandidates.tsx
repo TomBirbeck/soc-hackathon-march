@@ -10,7 +10,7 @@ const MatchedCandidates = ({props} : MatchedIprops) => {
         <ul>
             {
                 props.map((candidate) => {return(
-            <li key={candidate.id} className="text-left">
+            <li key={candidate.id} className="text-left mb-2">
                     <CandidateListItem props={candidate}/>
                 </li>
                 )})

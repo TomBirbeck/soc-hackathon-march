@@ -28,8 +28,8 @@ function App() {
     
     useEffect(() => {
         setRegex(regexCreator(requiredSkills))
-        setPartialMatches(partialMatchingCandidates(candidates, regex, requiredSkills.length))
         setFullMatches(fullMatchingCandidates(candidates, requiredSkills))
+        setPartialMatches(partialMatchingCandidates(candidates, regex, requiredSkills.length))
     }, [requiredSkills])
 
     return (

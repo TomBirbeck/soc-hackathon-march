@@ -45,7 +45,7 @@ function ContractForm( {setRequiredSkills} : Iprops) {
                             value={jobTitleInput}
                         ></input>
                         <input
-                            type="text"
+                            type="number"
                             name="contact-phone"
                             placeholder="Phone number"
                             onChange={(e) => {
@@ -54,7 +54,7 @@ function ContractForm( {setRequiredSkills} : Iprops) {
                             value={contactPhoneInput}
                         ></input>
                         <input
-                            type="text"
+                            type="email"
                             name="contact-email"
                             placeholder="Email address"
                             onChange={(e) => {
@@ -73,10 +73,11 @@ function ContractForm( {setRequiredSkills} : Iprops) {
                             isClearable={true}
                         />
                         <CheckboxDropdown
+                            required
                             skills={skills}
                             setSkills={setSkills}
                         />
-                        <button className="p-5 bg-blue-500 m-2">Search</button>
+                        <button className="p-1 bg-blue-500 m-2 h-10 self-center">Search</button>
                     </form>
                 </div>
     );
